@@ -17,6 +17,7 @@ class MyPollAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
     search_fields = ['question']
     date_hierarchy = 'pub_date'
+    inlines = [MyChoiceInline]
 #    fieldsets = [
 #        (None,               {'fields': ['question']}),
 #        ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
@@ -24,3 +25,4 @@ class MyPollAdmin(admin.ModelAdmin):
 #    inlines = [MyChoiceInline]
 
 admin.site.register(MyPoll, MyPollAdmin)
+admin.site.register(MyChoice)
